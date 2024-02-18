@@ -1,9 +1,12 @@
-import {defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  groups: [
+    {name: 'pageBuilder', title: 'Page Builder'},
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -48,6 +51,26 @@ export default defineType({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'sections',
+      type: 'array',
+      title: 'Sections',
+      group: 'pageBuilder',
+      of: [
+        defineArrayMember({
+          name: 'sectionHero',
+          type: 'sectionHero',
+        }),
+        defineArrayMember({
+          name: 'sectionContent',
+          type: 'sectionContent',
+        }),
+        defineArrayMember({
+          name: 'sectionForm',
+          type: 'sectionForm',
+        }),
+      ],
     }),
   ],
 
