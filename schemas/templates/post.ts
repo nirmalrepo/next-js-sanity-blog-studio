@@ -4,9 +4,7 @@ export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
-  groups: [
-    {name: 'pageBuilder', title: 'Page Builder'},
-  ],
+  groups: [{name: 'pageBuilder', title: 'Page Builder'}],
   fields: [
     defineField({
       name: 'title',
@@ -61,6 +59,10 @@ export default defineType({
         defineArrayMember({
           name: 'sectionHero',
           type: 'sectionHero',
+        }),
+        defineArrayMember({
+          name: 'sectionIntroduction',
+          type: 'sectionIntroduction',
         }),
         defineArrayMember({
           name: 'sectionContent',
