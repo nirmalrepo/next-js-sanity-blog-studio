@@ -3,7 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {presentationTool} from 'sanity/presentation'
-import { locate } from './plugins/presentation/locate'
+import {locate} from './plugins/presentation/locate'
 export default defineConfig({
   name: 'default',
   title: 'GPAo Studio',
@@ -16,10 +16,10 @@ export default defineConfig({
     presentationTool({
       previewUrl: {
         draftMode: {
-          enable: 'http://localhost:3000/api/draft',
+          enable: 'http://localhost:3001/api/draft',
         },
       },
-      title:'Preview',
+      title: 'Preview',
       locate,
     }),
   ],
